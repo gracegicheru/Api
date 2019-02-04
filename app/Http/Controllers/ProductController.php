@@ -37,17 +37,17 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request,  Product $product)
     {
-       
-        $request->new Request;
-        $request->name=$request->name;
-        $request->detail=$request->description;
-        $request->price=$request->price;
-        $request->stock=$request->stock;
-        $request->discount=$request->discount;
-        $request->save();
+       /*
+        $product->new Product;
+        $product->name=$request->name;
+        $product->detail=$request->description;
+        $product->price=$request->price;
+        $product->stock=$request->stock;
+        $product->discount=$request->discount;
+        $product->save();
         return response([
             'data'=>new ProductResource($product)
-        ],201);
+        ],201);*/
          return $request->all();
     }
 
@@ -95,6 +95,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+      $product->delete();
     }
 }
